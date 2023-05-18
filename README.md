@@ -1,9 +1,11 @@
 # SHCR [SH extension command repository]
+> ## What is .sh extension file?  
 ### 
-> ## TextField reconstruction 
-### Use (Command Line : $ add translate / ctrl + G [search for translate]) to open feature.
-
-*  `add translate` only available in textField of this application(non-github command)
+* ### `fileName.sh` This is a script language type, and executed by Unix Shell. [Can be used to control linux system]
+	#### Unix Shell : which is a interpreter for running the command line as an interface for client to use, and performed by the computer operating system to manipulate the instruction that script within the file.
+	User also introduce a method that directly visit the Secure Shell, here's an example:
+	##### `ls -l | grep key | less`
+* ### `fileName.sh` This is a script language type, and executed by Unix Shell. 
 
 ![pi](https://github.com/WeiberNoname/PortablePractice/assets/129390032/dfbfff4a-2d66-48bc-a970-d039b52eaec9)
 > ## Result 
