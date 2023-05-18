@@ -1,2 +1,2 @@
-# SHCR
-SH extension command repository
+# SHCR [SH extension command repository]
+### 
