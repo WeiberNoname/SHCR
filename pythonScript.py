@@ -1,19 +1,22 @@
+
 import subprocess
 
 def update_linux():
+	#apt update command and upgrade
+	subprocess.run(['sudo','apt','update'])
 
-        #apt update command and upgrade
-        subprocess.run(['sudo','apt','update'])
+	print("\nsimulate|||||||||||||||||||||||||||||||||||||||||||||||||||\n")
+	
+	#simulate
+	subprocess.run(['sudo','apt-get','upgrade','-s'])
 
-        print("\n|||||||||||||||||||||||||||||||||||||||||||||||||||\n")
+	TF1 = input("Are you sure to keep upgrading?(y/n)")
 
-        subprocess.run(['sudo','apt-get','upgrade'])
-
-        print("\n|||||||||||||||||||||||||||||||||||||||||||||||||||\n")
-
-        #check for package that needs upgrade
-        subprocess.run(['apt','list','upgradable'])
-
-        print("\n|||||||||||||||||||||||||||||||||||||||||||||||||||\n")
-
+	if TF1 == "y":
+		print("\nupgrade|||||||||||||||||||||||||||||||||||||||||||||||||||\n")
+		subprocess.run(['sudo','apt-get','upgrade'])
+	elif TF1 == "n":
+		print("\nupgradable|||||||||||||||||||||||||||||||||||||||||||||||||||\n")
+		#check for package that needs upgrade
+		subprocess.run(['apt','list','upgradable'])	
 update_linux()
