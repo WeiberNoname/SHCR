@@ -1,7 +1,28 @@
 
 import subprocess
 
+def commandSplit(str):
+	str = str.split()
+	return str
+
+def commandFilter(result):
+	result = commandSplit(result)
+	progress = 0
+	for word in result:
+		progress += 1
+		print("Command function "+str(progress))
+		if word == "update":
+			update_linux()
+		elif word == "pyinstaller":
+			pyinstaller_install()
+
+def pyinstaller_install():
+	print("\npyinstaller|||||||||||||||||||||||||||||||||||||||\n")
+	subprocess.run(['sudo','pip','install','pyinstaller'])
+
 def update_linux():
+	
+	print("\nsimulate|||||||||||||||||||||||||||||||||||||||\n")
 	#apt update command and upgrade
 	subprocess.run(['sudo','apt','update'])
 
@@ -19,4 +40,7 @@ def update_linux():
 		print("\nupgradable|||||||||||||||||||||||||||||||||||||||||||||||||||\n")
 		#check for package that needs upgrade
 		subprocess.run(['apt','list','upgradable'])	
-update_linux()
+
+string = input("Enter Function:")
+commandFilter(string)
+
