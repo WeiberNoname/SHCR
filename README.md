@@ -20,5 +20,29 @@
 * #### editing
 > ## How to connect python with c?(calling from python)
 * #### Here is an interesting topic, I remember the discrepancy between `communication` and `calling` words, so here is the difference introducing a different method that can be `scam` or `extraordinarily useful function`.
+* ##### C program called test.c
+```
+#include <stdio.h>
+int plus(int i){
+return i+1;
+}
+```
+* ##### We can use this command to creat a .so extension file, used to compile and build a shared library.
+```
+cc -fPIC -shared -o test.so test.c 
+```
+* ##### python code called python.py
+```
+from ctypes import *
+extension_so = "directory/of/test.so"
+method =  CDLL(extension_so)
+print(type(method))
+print(method.plus(1))
+```
+* ##### compile
+```
+python3 python.py
+```
+* #### output : 2
 
 
