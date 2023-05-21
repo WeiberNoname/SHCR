@@ -18,7 +18,7 @@
 
 > ## What is Remote Shell? 
 * #### editing
-> ## How to connect python with c?
-* #### editing
+> ## How to connect python with c?(calling from python)
+* #### Here is an interesting topic, I remember the discrepancy between `communication` and `calling` words, so here is the difference introducing a different method that can be `scam` or `extraordinarily useful function`.
 
 
