@@ -45,4 +45,6 @@ python3 python.py
 ```
 * #### output : 2
 
-
+> ## How to write a C program as python's library?(Python calling method from C library)
+> ## How to write python library for python to use?(calling from python)
+> ## How to write C program library for c to use?(calling from .h)
