@@ -1,6 +1,10 @@
 # SHCR(UI) [SH extension command repository] From article to practicle
+> ## What is pyinstaller?
+ * #### `pip install pyinstaller` Complete Pyinstaller installation.
+ * #### `pip install --upgrade pyinstaller` Upgrade Pyinstaller to the existing latest version.
+ * #### `pyinstaller fileName.py` The executable file creation.
+
 > ## What is .sh extension file?  
-### 
 * #### `fileName.sh` This is a script language type, and executed by Unix Shell. [Can be used to control linux system]
 > ## What is Unix Shell? 
 * #### Unix Shell : which is a interpreter for running the command line as an interface for client to use, and performed by the computer operating system to manipulate the instruction that script within the file.
