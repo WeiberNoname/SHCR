@@ -18,5 +18,7 @@
 
 > ## What is Remote Shell? 
 * #### editing
+> ## How to connect python with c?
+* #### editing
 
 
