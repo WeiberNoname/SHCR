@@ -48,3 +48,8 @@ python3 python.py
 > ## How to write a C program as python's library?(Python calling method from C library)
 > ## How to write python library for python to use?(calling from python)
 > ## How to write C program library for c to use?(calling from .h)
+
+## References:
+###### https://www.digitalocean.com/community/tutorials/calling-c-functions-from-python  
+###### https://www.techtarget.com/searchsecurity/definition/Secure-Shell#:~:text=SSH%2C%20also%20known%20as%20Secure,that%20implement%20the%20SSH%20protocol.
+###### https://pyinstaller.org/en/stable/
