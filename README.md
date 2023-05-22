@@ -18,7 +18,7 @@
 
 > ## What is Remote Shell? 
 * #### editing
-> ## How to connect python with c?(calling from python)
+> ### How to connect python with c?(calling from python)
 * #### Here is an interesting topic, I remember the discrepancy between `communication` and `calling` words, so here is the difference introducing a different method that can be `scam` or `extraordinarily useful function`.
 * ##### C program called test.c
 ```
@@ -44,12 +44,23 @@ print(method.plus(1))
 python3 python.py
 ```
 * #### output : 2
+c
+> ### How to write a C program as python's library?(Python calling method from C library(Python/C API))
 
-> ## How to write a C program as python's library?(Python calling method from C library)
-> ## How to write python library for python to use?(calling from python)
-> ## How to write C program library for c to use?(calling from .h)
+* ##### There are two general purpose to use the python/c API, one of which is to write an extension module for another program to use, and the other one is to be embedded into another larger program to use. 
+* The following macro definitions are mandatory and must be included before any other standard library.
+```
+#define PY_SSIZE_T_CLEAN
+#include <Python.h>
+```
+ > #### How to use the C library to introduce openCV into python program?
+
+
+> ### How to write python library for python to use?(calling from python)
+> ### How to write C program library for c to use?(calling from .h)
 
 ### References:
 ###### https://www.digitalocean.com/community/tutorials/calling-c-functions-from-python  
 ###### https://www.techtarget.com/searchsecurity/definition/Secure-Shell#:~:text=SSH%2C%20also%20known%20as%20Secure,that%20implement%20the%20SSH%20protocol.
 ###### https://pyinstaller.org/en/stable/
+###### https://docs.python.org/3/c-api/index.html?highlight=extending%20embedding%20python%20interpreter
