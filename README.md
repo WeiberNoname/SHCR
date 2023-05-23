@@ -92,6 +92,53 @@ print(message)
 > ### How to write python library for python to use?(calling from python)
 > ### How to write C program library for c to use?(calling from .h)
 
+* ##### Create a .h header file with the name library.h.
+```
+#ifndef library
+#define library
+
+// Function declaration
+int add(int a, int b);
+#endif
+```
+* ##### Create a .c file with the C function and named library.c.
+```
+#include "library.h"
+// Function definition
+int add(int a, int b) {
+    return a + b;
+}
+```
+* ##### Build library by type command line with:
+```
+cc -c library.c -o library.o
+cc -shared -o library.so library.o
+```
+* ##### Create your C program using the library function(named c.c):
+```
+#include <stdio.h>
+#include "library.h"
+
+int main() {
+    int result = add(5, 3);
+    printf("Result: %d\n", result);
+    return 0;
+}
+```
+* ##### Compile the program with the required addional detail:
+```
+cc c.c -L. library.o -o c
+```
+* ##### Executes the program:
+```
+./c
+```
+* #### output :
+``` 
+Result: 8
+```
+
+
 ### References:
 ###### https://www.digitalocean.com/community/tutorials/calling-c-functions-from-python  
 ###### https://www.techtarget.com/searchsecurity/definition/Secure-Shell#:~:text=SSH%2C%20also%20known%20as%20Secure,that%20implement%20the%20SSH%20protocol.
