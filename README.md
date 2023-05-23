@@ -48,11 +48,44 @@ c
 > ### How to write a C program as python's library?(Python calling method from C library(Python/C API))
 
 * ##### There are two general purpose to use the python/c API, one of which is to write an extension module for another program to use, and the other one is to be embedded into another larger program to use. 
-* The following macro definitions are mandatory and must be included before any other standard library.
+* The following macro definitions are mandatory and must be included before any other standard library.(Rcommended == mandatory)
+* ##### Create a file called library.c.
 ```
 #define PY_SSIZE_T_CLEAN
 #include <Python.h>
+//Function Declaration
 ```
+* ##### Create a file called setup.py.
+```
+from setuptools import setup, Extension
+setup(
+    name='library',
+    version='1.0',
+    author='Your Name',
+    description='A simple C library for Python',
+    ext_modules=[Extension('library', sources=['library.c'])]
+)
+```
+* ##### Type the following command.
+```
+//python3 is vary on different versions.
+//If the location is in the root directory, it will require sudo privilege to continue the process.
+
+python3 setup.py build
+python3 setup.py install
+```
+* ###### Exception  may occur:Please make the appropriate changes for your system and try again.(Try sudo)
+* ##### Import the library and use it.
+```
+import library
+
+name = input("Enter your name: ")
+message = library.greet(name)
+print(message)
+```
+
+
+
  > #### How to use the C library to introduce openCV into python program?
 
 
@@ -64,3 +97,4 @@ c
 ###### https://www.techtarget.com/searchsecurity/definition/Secure-Shell#:~:text=SSH%2C%20also%20known%20as%20Secure,that%20implement%20the%20SSH%20protocol.
 ###### https://pyinstaller.org/en/stable/
 ###### https://docs.python.org/3/c-api/index.html?highlight=extending%20embedding%20python%20interpreter
+###### https://docs.opencv.org/3.4/d2/de6/tutorial_py_setup_in_ubuntu.html
