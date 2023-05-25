@@ -27,12 +27,12 @@ printenv
 ```
 * ##### This will be required when the python build and install command starts operating. 
 ```
-CPLUS_INCLUDE_PATH=/usr/include/opencv4
+export CPLUS_INCLUDE_PATH=/usr/include/opencv4
 ```
 * ##### It can be used to set a specific path which the operating system should look forward to a shared library.
 ```
 //A: Directory that contains libraries.
-LD_LIBRARY_PATH=/file/to/library_directory
+export LD_LIBRARY_PATH=/file/to/library_directory
 
 //B: Specify two libraries:
 export LD_LIBRARY_PATH=/path/to/library1:/path/to/library2
