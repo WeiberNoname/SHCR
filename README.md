@@ -84,14 +84,7 @@ message = library.greet(name)
 print(message)
 ```
 
-
-
- > #### How to use the C library to introduce openCV into python program?
-
-
-> ### How to write python library for python to use?(calling from python)
 > ### How to write C program library for c to use?(calling from .h)
-
 * ##### Create a .h header file with the name library.h.
 ```
 #ifndef library
