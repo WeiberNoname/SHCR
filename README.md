@@ -44,7 +44,6 @@ print(method.plus(1))
 python3 python.py
 ```
 * #### output : 2
-c
 > ### How to write a C program as python's library?(Python calling method from C library(Python/C API))
 
 * ##### There are two general purpose to use the python/c API, one of which is to write an extension module for another program to use, and the other one is to be embedded into another larger program to use. 
