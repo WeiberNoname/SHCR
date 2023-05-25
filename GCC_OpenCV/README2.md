@@ -39,8 +39,8 @@ export LD_LIBRARY_PATH=/path/to/library1:/path/to/library2
 ```
 * #### 4. Create a new file called `example.py` in python.
 ```
-import image_display
-image_display.display_image('path/to/your/image.jpg')
+import displayImage
+displayImage.display_image('path/to/your/image.jpg')
 ```
 * #### 5. Executing the program.
 ```
