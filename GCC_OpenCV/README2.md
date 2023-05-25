@@ -48,9 +48,32 @@ python3 example.py
 ```
 * #### Result:
 ![Screenshot 2023-05-24 215559](https://github.com/WeiberNoname/SHCR/assets/129390032/7b719512-3556-4226-a651-b9b3ec0474b1)
+> ## How can I write a python/c API to make a C++ program `static shared library` in python?  
+* #### 1. Create a new file called `calculation.cpp` and add C++ code within it.
+* #### 2. Compile the program into a static shared library.
+```
+//-I/usr/include/python3.x : adjust the x into a specific version vary on different OS.
+g++ -O3 -Wall -shared -std=c++11 -fPIC -I/usr/include/python3.x calculation.cpp -o calculation.so
+```
+* #### 3. Create a new file called `example.py`.
+```
+import calculation
 
+# Call the calculate() function from the shared library
+result = calculation.calculate(10, 5)
+print("Result:", result)
+```
+* #### 4. Run the code.
+```
+python3 example.py
+```
+* #### Result:
+```
+Result: 50
+```
+![Screenshot 2023-05-25 130305](https://github.com/WeiberNoname/SHCR/assets/129390032/a3591ac6-960a-44dd-8df1-da49bd195118)
 
-> ## How can I write a python/c API to call a C++ opencv shared library to display an image in python?(using ctypes)  
+> ## How can I write a python/c API to call a C++ program `dynamic shared library` to python?(using ctypes)  
 * #### 1. Create a new file called `example.cpp` and add C++ code within it.
 
 ```
@@ -91,3 +114,6 @@ print(f"The factorial of {n} is: {result}")
 ```
 The factorial of 5 is: 120
 ```
+#### References:
+https://tbhaxor.com/understanding-concept-of-shared-libraries/
+https://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html
