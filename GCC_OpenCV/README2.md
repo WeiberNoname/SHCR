@@ -46,5 +46,48 @@ displayImage.display_image('path/to/your/image.jpg')
 ```
 python3 example.py
 ```
+* #### Result:
 ![Screenshot 2023-05-24 215559](https://github.com/WeiberNoname/SHCR/assets/129390032/7b719512-3556-4226-a651-b9b3ec0474b1)
 
+
+> ## How can I write a python/c API to call a C++ opencv shared library to display an image in python?(using ctypes)  
+* #### 1. Create a new file called `example.cpp` and add C++ code within it.
+
+```
+// example.cpp
+#include <cstdint>
+
+extern "C" {
+    uint64_t calculateFactorial(uint64_t n) {
+        if (n == 0)
+            return 1;
+        else
+            return n * calculateFactorial(n - 1);
+    }
+}
+```
+
+* #### 2. Create a `.so` extension file.
+```
+g++ -shared -o example.so example.cpp
+```
+* #### 3. Create a `example.py`.
+```
+# example.py
+import ctypes
+# Load the shared library
+example = ctypes.CDLL('./example.so')
+
+# Declare the function signature
+example.calculateFactorial.argtypes = (ctypes.c_uint64,)
+example.calculateFactorial.restype = ctypes.c_uint64
+
+# Call the C++ function
+n = 5
+result = example.calculateFactorial(n)
+print(f"The factorial of {n} is: {result}")
+```
+* #### Result:
+```
+The factorial of 5 is: 120
+```
